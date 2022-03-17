@@ -4,11 +4,11 @@ resource "aws_vpc" "main" {
 
   tags = {
     Name = "demo-vpc"
-    Purpose = "Jenkins Demo"
+    Purpose = "VPC Demo"
   }
   # Create AWS ec2 instance
   resource "aws_instance" "ubuntu-tf" {
-  ami           = "ami-0747bdcabd34c712a"
+  ami           = var.ami_id
   key_name = var.key_name
   instance_type = var.instance_type
   security_groups= [var.security_group]
