@@ -6,6 +6,7 @@ resource "aws_vpc" "main" {
     Name = "demo-vpc"
     Purpose = "VPC Demo"
   }
+}
   # Create AWS ec2 instance
   resource "aws_instance" "ubuntu-tf" {
   ami           = var.ami_id
@@ -16,4 +17,4 @@ resource "aws_vpc" "main" {
     Name = var.tag_name
   }
 }
-}
+
