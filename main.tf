@@ -1,15 +1,8 @@
-resource "aws_vpc" "main" {
-  cidr_block       = "10.0.0.0/16"
-  instance_tenancy = "default"
 
-  tags = {
-    Name = "demo-vpc"
-    Purpose = "VPC Demo"
-  }
-}
   # Create AWS ec2 instance
   resource "aws_instance" "ubuntu-tf" {
-  ami           = var.ami_id
+  ami = var.ami_id
+  vpc_id = "vpc-0043430975cdcbb92"
   key_name = var.key_name
   instance_type = var.instance_type
   security_groups= var.security_group
